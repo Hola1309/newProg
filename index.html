@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    textarea {
+      resize: none;
+    }
+
+    #newRule {
+      resize: none;
+    }
+
+    .container {
+      margin-left: 50px;
+    }
+
+    canvas {
+      background-color: beige;
+    }
+
+    .sheet {
+      display: flex;
+
+    }
+  </style>
+</head>
+
+
+<div class="container">
+  <textarea placeholder="Name" name="" id="name-of-var" cols="5" rows="1"></textarea>
+  <textarea placeholder="Left" name="" id="left-border" cols="5" rows="1"></textarea>
+  <textarea placeholder="Right" name="" id="right-border" cols="5" rows="1"></textarea>
+  <textarea placeholder="A" name="" id="a" cols="5" rows="1"></textarea>
+  <textarea placeholder="B" name="" id="b" cols="5" rows="1"></textarea>
+  <textarea placeholder="C" name="" id="c" cols="5" rows="1"></textarea><br><input type="button"
+    value="Новая переменная" onclick="createVar()">
+  <hr>
+
+  Переменные<hr>
+  <div class='sheet'>
+    <div style="width: 80px;">
+      
+      <span id='name'></span><br>
+      <span id='name'></span><br>
+      <span id='name'></span><br>
+      <span id='name'></span><br>
+      <span id='name'></span><br>
+      <span id='name'></span><br>
+      <span id='name'></span><br>
+      <span id='name'></span><br>
+      <span id='name'></span><br>
+      <span id='name'></span><br>
+    </div>
+    <div id='myVars'>
+      
+      <span class="rule" id="var"></span><br>
+      <span class="rule" id="var"></span><br>
+      <span class="rule" id="var"></span><br>
+      <span class="rule" id="var"></span><br>
+      <span class="rule" id="var"></span><br>
+      <span class="rule" id="var"></span><br>
+      <span class="rule" id="var"></span><br>
+      <span class="rule" id="var"></span><br>
+      <span class="rule" id="var"></span><br>
+      <span class="rule" id="var"></span><br></div>
+  </div>
+  <canvas id="canvas" height="250px" width="500px"></canvas>
+  <hr>
+
+  <textarea placeholder="Rule's value" name="" id="value-of-rules" cols="30" rows="10"></textarea>
+  <br>
+  <input type="button" value="Новое правило" onclick="createRule()">
+  <hr>
+  <input list="variable" id="myRule">
+  <input placeholder="" id="test">
+  <datalist id="variable"></datalist>
+<input type="button" value="Найти решение" onclick="if (!myRule.value.toString()){test()}else{calculate(myRule.value.toString())}"><input type="button" value="X"
+    onclick="clearSrearch()">
+  <hr>
+  <div class="sheet">
+    <div style="width: 80px;">
+      <span>ID</span><br>
+      <span id='id'></span><br>
+      <span id='id'></span><br>
+      <span id='id'></span><br>
+      <span id='id'></span><br>
+      <span id='id'></span><br>
+      <span id='id'></span><br>
+      <span id='id'></span><br>
+      <span id='id'></span><br>
+      <span id='id'></span><br>
+      <span id='id'></span><br>
+    </div>
+    <div>
+      <span class="rule">Rule's value</span><br>
+      <span class="rule" id="rule"></span><br>
+      <span class="rule" id="rule"></span><br>
+      <span class="rule" id="rule"></span><br>
+      <span class="rule" id="rule"></span><br>
+      <span class="rule" id="rule"></span><br>
+      <span class="rule" id="rule"></span><br>
+      <span class="rule" id="rule"></span><br>
+      <span class="rule" id="rule"></span><br>
+      <span class="rule" id="rule"></span><br>
+      <span class="rule" id="rule"></span><br></div>
+
+  </div>
+</div>
+</body>
+<script src="./index.js"></script>
+
+</html>
